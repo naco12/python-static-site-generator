@@ -2,9 +2,10 @@ import pathlib
 from pathlib import Path
 # defining a class Site
 class Site:
-    def __init__(self, source, dest):
+    def __init__(self, source, dest, parsers=None):
         self.source = Path(source)
         self.dest = Path(dest)
+        self.parsers = parsers or []
 
     # make a directory
     def create_dir(self, path):
