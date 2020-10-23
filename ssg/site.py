@@ -1,5 +1,6 @@
 import pathlib
 from pathlib import Path
+import sys
 # defining a class Site
 class Site:
     def __init__(self, source, dest, parsers=None):
@@ -32,3 +33,7 @@ class Site:
             parser.parse(path, self.source, self.dest)
         else:
             print("Not Implemented")
+
+    @staticmethod
+    def error(Message):
+        sys.stderr.write("\x1b[1;31m{}\n".format(message))
